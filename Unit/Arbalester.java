@@ -1,32 +1,17 @@
 package Unit;
-public class Arbalester extends Characters {
+public class Arbalester extends Archer {
 
-// Броня, Ущерб (Повреждение), Расстояние 
-    protected Integer defense;
-    protected Integer damage;
-    protected Integer distance;
+// Арбалетчик
+    protected String name;
 
-    public Arbalester(String name, int hp_real, int hp_max, int attack) {
-        super(name, hp_real, hp_max, attack);
+    public Arbalester(String name) {
+        super(150, 150, 5, 3, 12, 22, 22, 3);
+        this.name = name;
     }
-    
-    public Integer getDefense() {
-        return defense;
-    }
-    public Integer getDamage() {
-        return damage;
-    }
-    public Integer getDistance() {
-        return distance;
-    }
-    @Override
-    public Integer getAttack() {
-        return attack;
-    }
-    @Override
-    public Integer getHp_real() {
-        return hp_real;
-    }
-    
+    public String getInfo() {
+        return String.format("Герой: %s; Имя: %s. Я - арбалетчик",
+       this.getClass().getSimpleName(), this.name);
+   }
+   
 }
 

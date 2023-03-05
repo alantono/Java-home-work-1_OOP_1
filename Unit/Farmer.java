@@ -1,18 +1,21 @@
 package Unit;
 public class Farmer extends Characters {
 
-    // кормит
-    protected Integer feed;
+    // крестьянин
+    protected String name;
+    protected int feed;
   
-    public Farmer(String name, int hp_real, int hp_max, int attack) {
-        super(name, hp_real, hp_max, attack);
+    public Farmer(String name, int feed) {
+        super(150, 150, 2, 2, 2);
+        this.name = name;
+        this.feed = feed;
     }
 
     public Integer getFeed() {
         return feed;
     }
-    @Override
-    public Integer getHp_real() {
-        return hp_real;
-    }
+    public String getInfo() {
+        return String.format("Герой: %s; Имя: %s. Я - крестьянин",
+       this.getClass().getSimpleName(), this.name);
+   }
 }

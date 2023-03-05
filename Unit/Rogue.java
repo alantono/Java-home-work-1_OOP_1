@@ -1,28 +1,16 @@
 package Unit;
 public class Rogue extends Characters {
 
-    // Броня, Ущерб (Повреждение)
-    protected Integer defense;
-    protected Integer damage;
+    // Разбойник
+    protected String name;
 
-    public Rogue(String name, int hp_real, int hp_max, int attack) {
-        super(name, hp_real, hp_max, attack);
+    public Rogue(String name) {
+        super(150, 150, 4, 2, 10);
+        this.name = name;
     }
-    public Integer getDefense() {
-        return defense;
+    public String getInfo() {
+        return String.format("Герой: %s; Имя: %s. Я - разбойник",
+       this.getClass().getSimpleName(), this.name);
+   }
+        
     }
-    public Integer getDamage() {
-        return damage;
-    }
-
-    @Override
-    public Integer getAttack() {
-        return attack;
-    }
-    @Override
-    public Integer getHp_real() {
-        return hp_real;
-    }
-
-    
-}

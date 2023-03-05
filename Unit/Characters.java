@@ -1,29 +1,28 @@
 package Unit;
-import java.lang.reflect.Constructor;
+// import java.lang.reflect.Constructor;
+// import java.util.Random;
 
-import javax.management.ConstructorParameters;
+// import javax.management.ConstructorParameters;
 
-public class Characters {
+public abstract class Characters implements GameInterface{
 
-    protected String name;
-    protected Integer hp_real;
-    protected Integer hp_max = 100;
-    protected Integer attack;
+    protected float hp;
+    protected float hp_max = 100;
+    protected int attack;
+    protected int defense;
+    protected int damage;
 
-
-    public Characters(String name, int hp_real, int hp_max, int attack) {
-        this.name = name;
-        this.hp_real = hp_real;
+    public Characters(float hp, float hp_max, int attack, int defense, int damage) {
+        this.hp = hp;
         this.hp_max = hp_max;
         this.attack = attack;
-
+        this.defense = defense;
+        this.defense = damage;
     }
-    public Integer getHp_real() {
-        return hp_real;
+    @Override
+    public void step(int a) {}
+
+    @Override
+    public String getInfo() {return "Я человек!";}
     }
 
-    public Integer getAttack() {
-        return attack;
-    }
-
- }

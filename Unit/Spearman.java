@@ -1,28 +1,16 @@
 package Unit;
 public class Spearman extends Characters {
 
-// Броня, Ущерб (Повреждение)
-protected Integer defense;
-protected Integer damage;
+// копейщик
+    protected String name;
 
-    public Spearman(String name, int hp_real, int hp_max, int attack) {
-        super(name, hp_real, hp_max, attack);
+    public Spearman(String name) {
+        super(150, 150, 5, 4, 15);
+        this.name = name;
     }
-
-    public Integer getDefense() {
-        return defense;
-    }
-    public Integer getDamage() {
-        return damage;
-    }
-
-    @Override
-    public Integer getAttack() {
-        return attack;
-    }
-    @Override
-    public Integer getHp_real() {
-        return hp_real;
-    }
+    public String getInfo() {
+        return String.format("Герой: %s; Имя: %s. Я - копейщик",
+       this.getClass().getSimpleName(), this.name);
+   }
     
 }
